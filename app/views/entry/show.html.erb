@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+    <link href="http://blog.keyakizaka46.com/files/14/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://blog.keyakizaka46.com/files/14/css/jumbotron-narrow.css" rel="stylesheet">
+    <link href="http://blog.keyakizaka46.com/files/14/css/asp-form.css" rel="stylesheet">
+    <link href="http://blog.keyakizaka46.com/files/14/css/common.css" rel="stylesheet">
+    -->
+    <link href="<%= asset_path "bootstrap.min.css" %>" rel="stylesheet">
+    <link href="<%= asset_path "jumbotron-narrow.css" %>" rel="stylesheet">
+    <link href="<%= asset_path "asp-form.css" %>" rel="stylesheet">
+    <link href="<%= asset_path "common.css" %>" rel="stylesheet">
+    <script type="text/javascript" src="<%= asset_path "footerFixed.js" %>"></script>
+    <!-- <title>欅坂46オフィシャルブログ</title> -->
+    <title>KeyakiFeed</title>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="col-lg-12">
+        <h1>
+          <!--<a href="/mob/news/diarKiji.php?site=k46&ima=4925&cd=member">-->
+          <!--<img src="http://www.keyakizaka46.com/common/img/pc/ttl_toriizaka46.png" alt="欅坂46" class="logo">-->
+          <img src="<%= asset_path "ttl_toriizaka46.png" %>" alt="欅坂46" class="logo">
+          </a>
+        </h1>
+      </div>
+      <h4>欅坂46 OFFICIAL BLOG </h4>
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="kiji">
+            <table class="kiji_head">
+              <td class="date">
+                <!-- yearmonth -->
+                <span class="kiji_yearmonth"><%= @kiji_yearmonth %></span>
+                <br>
+                <!-- day -->
+                <span class="kiji_day"><%= @kiji_day %></span>
+                <!-- week -->
+                <span class="kiji_week"><%= @kiji_week %></span>
+              </td>
+              <td class="title">
+                <!-- author -->
+                <span class="kiji_member"><%= @kiji_member %></span>
+                <!-- title -->
+                <span class="kiji_title"><%= @kiji_title %></span>
+              </td>
+            </table>
+            <!-- body -->
+            <%= @kiji_body %>
+            <!-- date -->
+            <div class="kiji_foot"><%= @kiji_foot %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+  <% if @isIOS == 1 %>
+  <div id="footer" style="width: 100%; height: 180px; background-color: #5fb955; color: #264A22; padding:10px;">
+    <p style="text-align: center; margin :10px;"><b>KeyakiFeedアプリをインストールしませんか?</b> KeyakiFeedはブログの更新をPUSH通知でお知らせしたり、メンバーごとにブログを閲覧できます。
+    </p>
+    <p style="text-align: center; margin :10px;">
+      <a href="https://play.google.com/store/apps/details?id=jp.shts.android.keyakifeed&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-AC-global-none-all-co-pr-py-PartBadges-Oct1515-1">
+      <img alt="Get it on Google Play" src="<%= asset_path "ios_badge.png" %>" /></a>
+    </p>
+  </div>
+  <% end %>
+  <% if @isAndroid  == 1 %>
+  <div id="footer" style="width: 100%; height: 180px; background-color: #5fb955; color: #264A22; padding:10px;">
+    <p style="text-align: center; margin :10px;"><b>KeyakiFeedアプリをインストールしませんか?</b> KeyakiFeedはブログの更新をPUSH通知でお知らせしたり、メンバーごとにブログを閲覧できます。
+    </p>
+    <p style="text-align: center; margin :10px;">
+      <a href="https://play.google.com/store/apps/details?id=jp.shts.android.keyakifeed&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-AC-global-none-all-co-pr-py-PartBadges-Oct1515-1">
+      <img alt="Get it on Google Play" src="<%= asset_path "android-badge.png" %>" /></a>
+    </p>
+  </div>
+  <% end %>
+</html>
