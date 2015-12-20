@@ -27,9 +27,9 @@ class EntryController < ApplicationController
     # format 2015/12/03 00:21
     @kiji_foot = to_s(entry['published'])
 
-    #if !entry['image_url_list'].empty? then
-    #  @image_url = entry['image_url_list'][0]
-    #end
+    if !entry['image_url_list'].empty? then
+      @image_url = entry['image_url_list'][0]
+    end
 
     # http://keyakizaka46-mirror.herokuapp.com/entry/show/mqq7x6VukF
     @entry_url = "http://keyakizaka46-mirror.herokuapp.com/entry/show/#{entry['objectId']}"
