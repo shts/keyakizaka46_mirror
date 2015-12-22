@@ -30,6 +30,7 @@ class EntryController < ApplicationController
     #if !entry['image_url_list'].empty? then
     #  @image_url = entry['image_url_list'][0]
     #end
+    @kiji_thumbnail = entry['image_url_list'][0]
 
     # http://keyakizaka46-mirror.herokuapp.com/entry/show/mqq7x6VukF
     #@entry_url = "http://keyakizaka46-mirror.herokuapp.com/entry/show/#{entry['objectId']}"
